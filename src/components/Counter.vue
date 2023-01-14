@@ -1,13 +1,22 @@
 <template>
     <div>
-        <h2>hola, soy c</h2>
-        <p>{{ contador}} <sup>2</sup> = {{ }}</p>
-        <button @click="increase()">+1</button>
-        <button @click="decrement()">-1</button>
+        <div class="d-flex flex-column align-center pt-10">
+            <h2>hola, soy c</h2>
+            <p>{{ contador }} <sup>2</sup> = {{ squareComputer }}</p>
+            <div>
+                <v-btn class="mx-2" fab dark small color="primary" @click="decrement">
+                <v-icon dark> mdi-minus </v-icon>
+            </v-btn>
+            <v-btn class="mx-2" fab dark small color="purple" @click="increase">
+                <v-icon dark> mdi-plus </v-icon>
+            </v-btn>
+
+            </div>
+        </div>
     </div>
 </template>
 
-<script>    
+<script>
 export default {
     name: 'Counter',
     data() {
@@ -19,10 +28,10 @@ export default {
         squareCounter() {
             this.contador = this.contador * this.contador;
         },
-        increase(){
+        increase() {
             this.contador++;
         },
-        decrement(){
+        decrement() {
             this.contador--;
         }
     },
@@ -35,17 +44,5 @@ export default {
 }
 </script>
 <style scoped>
-    button {
-        background-color: #4CAF50; /* Green */
-        border: none;
-        margin-left: 20px;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
+    
 </style> 
